@@ -55,11 +55,10 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e =>{
     e.respodWith(
-        cache.match(e.request)
-            .then(response=> {
+        caches.match(e.request).then(response=> {
                 if(response){
                     return response;
                 }
-            })
+        })
     )
 })
