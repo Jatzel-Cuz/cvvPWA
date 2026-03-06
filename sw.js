@@ -37,7 +37,7 @@ self.addEventListener('activate', e => {
     const cacheWhitelist = [CACHE_NAME];
 
     e.waitUntil(
-        cache.keys().then(cacheNames => {
+        caches.keys().then(cacheNames => {
             return Promise.all(
                 cacheNames.map(cacheNames => {
                     if (cacheWhitelist.indexOf(cacheNames) === -1) {
